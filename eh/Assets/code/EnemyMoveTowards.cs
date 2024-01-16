@@ -10,21 +10,21 @@ public class EnemyMoveTowards : MonoBehaviour
     Vector3 enemyPosition;
 
     // Use this for initialization
-    void Start () 
+    void Awake () 
     {
-
+        if (GoodGuy == null)
+        {
+            GoodGuy = GameObject.Find("Good Guy");
+        }
     }
 
 
     // Update is called once per frame
     void Update() 
     {
-
-
         //Vector3.MoveTowards(player.transform.position.x, player.transform.position.y, player.transform.position.z, 1);
         enemyPosition = Vector3.MoveTowards(transform.position, GoodGuy.transform.position, speed * Time.deltaTime);
 
         transform.position = enemyPosition;
-   
     }
 }

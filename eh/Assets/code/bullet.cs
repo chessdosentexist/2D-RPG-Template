@@ -6,6 +6,7 @@ public class bullet : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
+    public float damage;
     // Start is called before the first frame update
     void Awake()
     {
@@ -13,11 +14,12 @@ public class bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.GetComponent<HealthCalculations>() != null)
         {
-
+            other.gameObject.GetComponent<HealthCalculations>().take_damage(damage);
         }
+        Destroy(gameObject);
     }
 }

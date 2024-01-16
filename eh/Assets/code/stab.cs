@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthCalculations : MonoBehaviour
+public class stab : MonoBehaviour
 {
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
